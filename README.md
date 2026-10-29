@@ -157,13 +157,6 @@ python main.py simulate --scenario FAIL_AGENT_DROP
 # Failure Cases 4 & 5: Duplicate and out-of-order events from Provider B
 python main.py simulate --scenario FAIL_CHAOS_EVENTS
 ```
-
-#### Run Comprehensive End-to-End Demo:
-Executes all core scenarios and failure cases sequentially:
-```powershell
-python main.py demo
-```
-
 ### Running Multi-Worker Load Test
 Benchmark high-concurrency race condition resistance across multiple concurrent dialer workers:
 ```powershell
