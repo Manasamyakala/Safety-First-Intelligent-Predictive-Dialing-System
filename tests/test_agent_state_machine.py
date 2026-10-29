@@ -1,5 +1,4 @@
 """Unit tests for Agent State Machine."""
-
 import pytest
 from smartdialer.models.agent import Agent, AgentState, InvalidAgentTransitionError
 
