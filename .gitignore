@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
+*.db-wal
+*.db-shm
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
