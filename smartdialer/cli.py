@@ -63,6 +63,10 @@ def main() -> None:
     load_parser.add_argument("--borrowers", "-b", type=int, default=1000, help="Number of borrowers")
     load_parser.add_argument("--iterations", "-i", type=int, default=12, help="Iterations per worker")
 
+    # dashboard command (optional web UI)
+    dash_parser = subparsers.add_parser("dashboard", help="Start optional local web dashboard on http://127.0.0.1:8000")
+    dash_parser.add_argument("--port", "-p", type=int, default=8000, help="Port to bind dashboard to")
+
     args = parser.parse_args()
 
     if args.command == "simulate":
@@ -78,9 +82,13 @@ def main() -> None:
                 iterations_per_worker=args.iterations,
             )
         )
+    elif args.command == "dashboard":
+        from smartdialer.web_ui import start_dashboard
+        start_dashboard(port=args.port)
     else:
         parser.print_help()
 
 
 if __name__ == "__main__":
     main()
+
